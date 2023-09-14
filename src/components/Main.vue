@@ -30,10 +30,16 @@
 
 <script>
 import Card from "@/components/Card.vue";
+import axios from "axios";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Main',
-  components: {Card}
+  components: {Card},
+  setup() {
+    axios.get("/api/items").then((res)=> {
+      console.log(res);
+    })
+  }
 }
 </script>
