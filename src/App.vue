@@ -1,22 +1,17 @@
 <template>
-<Header></Header>
-
-<Main></Main>
-
-<Footer></Footer>
-
+  <Header></Header>
+  <RouterView />
+  <Footer></Footer>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
-import Main from "@/components/Main.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
   name: 'App',
   components: {
     Footer,
-    Main,
     Header
   }
 }
@@ -91,6 +86,7 @@ export default {
   --bs-btn-active-bg: #5a23c8;
   --bs-btn-active-border-color: #5a23c8;
 }
+
 .bd-mode-toggle {
   z-index: 1500;
 }
