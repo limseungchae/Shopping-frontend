@@ -29,6 +29,7 @@
 <script>
 import {reactive} from "vue";
 import axios from "axios";
+import store from "@/scripts/store";
 
 export default {
   setup() {
@@ -41,7 +42,9 @@ export default {
 
     const submit = () => {
       axios.post("/api/account/login", state.form).then((res) => {
-        console.log(res);
+        // Vuex 스토어의 setAccount 변이(mutations)를 호출하여 계정 정보를 업데이트
+        store.commit('setAccount', res.data);
+        // console.log(res);
         window.alert("로그인하였습니다.");
       })
 

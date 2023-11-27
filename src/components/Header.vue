@@ -15,7 +15,8 @@
                 <router-link to="/" class="text-white">메인 화면</router-link>
               </li>
               <li>
-                <router-link to="/login" class="text-white">로그인</router-link>
+                <router-link to="/login" class="text-white" v-if="$store.state.account.id">로그인</router-link>
+                <router-link to="/login" class="text-white" v-else>로그아웃</router-link>
               </li>
             </ul>
           </div>
