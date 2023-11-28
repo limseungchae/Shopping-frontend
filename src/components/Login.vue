@@ -45,6 +45,7 @@ export default {
       axios.post("/api/account/login", state.form).then((res) => {
         // Vuex 스토어의 setAccount 변이(mutations)를 호출하여 계정 정보를 업데이트
         store.commit('setAccount', res.data);
+        sessionStorage.setItem("id", res.data);
         router.push({path:"/"})
         // console.log(res);
         window.alert("로그인하였습니다.");
