@@ -46,11 +46,12 @@ export default {
         // Vuex 스토어의 setAccount 변이(mutations)를 호출하여 계정 정보를 업데이트
         store.commit('setAccount', res.data);
         sessionStorage.setItem("id", res.data);
-        router.push({path:"/"})
+        router.push({path: "/"})
         // console.log(res);
         window.alert("로그인하였습니다.");
-      })
-
+      }).catch(() => {
+        window.alert("로그인 정보가 존재하지 않습니다.");
+      });
     }
 
     return {state, submit}
